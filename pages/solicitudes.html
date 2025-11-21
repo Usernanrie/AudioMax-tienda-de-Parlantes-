@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JUNYHEL — Solicitar Servicio</title>
+  <link rel="stylesheet" href="../css/colores.css">
+  <link rel="stylesheet" href="../css/styleInicio.css">
+  <link rel="stylesheet" href="../css/formularios.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <style>
+    .service-category { padding:1rem; border-radius:12px; margin-bottom:1.5rem; }
+    .service-category h3 { margin-bottom:0.5rem; color:#fff; }
+    .service-category ul { list-style:none; padding:0; }
+    .service-category li { cursor:pointer; padding:0.5rem; border-radius:8px; transition: background 0.2s; color:#fff; }
+    .service-category li:hover { background:rgba(255,255,255,0.2); }
+    .form-section { margin-top:2rem; }
+  </style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <img src="../imagenes/logo.png" alt="JUNYHEL" class="logo">
+    <h1>JUNYHEL</h1>
+  </div>
+  <nav>
+    <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="perfil.html" class="active">Perfil</a></li>
+        <li><a href="configuracion.html">Configuración</a></li>
+        <li><a href="solicitudes.html">Solicitar Servicio</a></li>
+        <li><a href="servicios-electricidad.html" class="servicio-link">*Electricidad</a></li>
+        <li><a href="servicios-seguridad.html" class="servicio-link">*Seguridad</a></li>
+        <li><a href="servicios-redes.html" class="servicio-link">*Redes</a></li>
+        <li><a href="servicios-educacion.html" class="servicio-link">*Educación</a></li>
+        <li><a href="servicios-especiales.html" class="servicio-link">*Especiales</a></li>
+        <li><a href="nosotros.html" class="servicio-link">Nosotros</a></li>
+        <li><a href="../index.html">Cerrar sesión</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main class="main-content">
+
+  <!-- Banner -->
+  <section class="banner">
+    <img src="../imagenes/solicitudes.png" alt="Solicitar Servicio" class="banner-img">
+    <div class="banner-text">
+      <h1>Solicitar Servicio</h1>
+      <p>Haz clic en un servicio para llenar automáticamente el formulario</p>
+    </div>
+  </section>
+
+  <!-- Listado de Servicios -->
+<!-- Listado de Servicios -->
+<section class="services-section">
+
+  <!-- Categoría: Electricidad -->
+  <div class="service-category" style="background-color:#453e19;">
+    <h3>Electricidad</h3>
+    <ul>
+      <li data-servicio="Instalaciones Residenciales" data-img="../imagenes/electricidad_residencial.png">
+        <img src="../imagenes/electricidad_residencial.png" alt="Residencial" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Instalaciones Residenciales
+      </li>
+      <li data-servicio="Instalaciones Comerciales" data-img="../imagenes/electricidad_comercial.png">
+        <img src="../imagenes/electricidad_comercial.png" alt="Comercial" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Instalaciones Comerciales
+      </li>
+      <li data-servicio="Reparaciones y Mantenimiento" data-img="../imagenes/electricidad_mantenimiento.png">
+        <img src="../imagenes/electricidad_mantenimiento.png" alt="Mantenimiento" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Reparaciones y Mantenimiento
+      </li>
+      <li data-servicio="Automatización y Domótica" data-img="../imagenes/electricidad_domotica.png">
+        <img src="../imagenes/electricidad_domotica.png" alt="Domótica" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Automatización y Domótica
+      </li>
+    </ul>
+  </div>
+
+  <!-- Categoría: Redes -->
+  <div class="service-category" style="background-color:#1e3139;">
+    <h3>Redes</h3>
+    <ul>
+      <li data-servicio="Redes Domésticas" data-img="../imagenes/redes_domesticas.png">
+        <img src="../imagenes/redes_domesticas.png" alt="Domésticas" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Redes Domésticas
+      </li>
+      <li data-servicio="Redes Empresariales" data-img="../imagenes/redes_empresariales.png">
+        <img src="../imagenes/redes_empresariales.png" alt="Empresariales" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Redes Empresariales
+      </li>
+      <li data-servicio="Seguridad de Red" data-img="../imagenes/seguridad_red.png">
+        <img src="../imagenes/seguridad_red.png" alt="Seguridad" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Seguridad de Red
+      </li>
+      <li data-servicio="Dispositivos Conectados" data-img="../imagenes/dispositivos.png">
+        <img src="../imagenes/dispositivos.png" alt="Dispositivos" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Dispositivos Conectados
+      </li>
+    </ul>
+  </div>
+
+  <!-- Categoría: Seguridad -->
+  <div class="service-category" style="background-color:#3f160e;">
+    <h3>Seguridad</h3>
+    <ul>
+      <li data-servicio="Instalación de Cámaras" data-img="../imagenes/camaras2.png">
+        <img src="../imagenes/camaras2.png" alt="Cámaras" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Instalación de Cámaras
+      </li>
+      <li data-servicio="Alarmas y Sensores" data-img="../imagenes/alarmas.png">
+        <img src="../imagenes/alarmas.png" alt="Alarmas" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Alarmas y Sensores
+      </li>
+      <li data-servicio="Monitoreo Remoto" data-img="../imagenes/monitoreo.png">
+        <img src="../imagenes/monitoreo.png" alt="Monitoreo" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Monitoreo Remoto
+      </li>
+    </ul>
+  </div>
+
+  <!-- Categoría: Educación -->
+  <div class="service-category" style="background-color:#114711;">
+    <h3>Educación</h3>
+    <ul>
+      <li data-servicio="Refuerzo en Matemáticas" data-img="../imagenes/matematicas.png">
+        <img src="../imagenes/matematicas.png" alt="Matemáticas" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Refuerzo en Matemáticas
+      </li>
+      <li data-servicio="Refuerzo en Física" data-img="../imagenes/fisica.png">
+        <img src="../imagenes/fisica.png" alt="Física" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Refuerzo en Física
+      </li>
+      <li data-servicio="Talleres de Ofimática" data-img="../imagenes/ofimatica.png">
+        <img src="../imagenes/ofimatica.png" alt="Ofimática" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Talleres de Ofimática
+      </li>
+      <li data-servicio="Elaboración de Informes Académicos" data-img="../imagenes/informes.png">
+        <img src="../imagenes/informes.png" alt="Informes" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Elaboración de Informes Académicos
+      </li>
+      <li data-servicio="Presentaciones Profesionales" data-img="../imagenes/presentaciones.png">
+        <img src="../imagenes/presentaciones.png" alt="Presentaciones" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Presentaciones Profesionales
+      </li>
+    </ul>
+  </div>
+
+  <!-- Categoría: Especiales -->
+  <div class="service-category" style="background-color:#220a22;">
+    <h3>Especiales</h3>
+    <ul>
+      <li data-servicio="Duchas Eléctricas" data-img="../imagenes/duchas.png">
+        <img src="../imagenes/duchas.png" alt="Duchas" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Duchas Eléctricas
+      </li>
+      <li data-servicio="Bombas de Agua" data-img="../imagenes/bombas.png">
+        <img src="../imagenes/bombas.png" alt="Bombas" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Bombas de Agua
+      </li>
+      <li data-servicio="Equipos Multimedia" data-img="../imagenes/multimedia.png">
+        <img src="../imagenes/multimedia.png" alt="Multimedia" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Equipos Multimedia
+      </li>
+      <li data-servicio="Ajustes Técnicos de Oficina" data-img="../imagenes/oficina.png">
+        <img src="../imagenes/oficina.png" alt="Oficina" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Ajustes Técnicos de Oficina
+      </li>
+      <li data-servicio="Arreglo de Herramientas y Taladros" data-img="../imagenes/herramientas.png">
+        <img src="../imagenes/herramientas.png" alt="Herramientas" style="width:50px; vertical-align:middle; margin-right:8px;">
+        Arreglo de Herramientas y Taladros
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- Formulario igual que antes -->
+<section class="form-section" id="formSection">
+  <form id="solicitudForm" class="form" novalidate>
+    <label for="clienteName">Nombre completo</label>
+    <input id="clienteName" name="clienteName" type="text" required>
+
+    <label for="clienteEmail">Correo electrónico</label>
+    <input id="clienteEmail" name="clienteEmail" type="email" required>
+
+    <label for="clienteTelefono">Teléfono</label>
+    <input id="clienteTelefono" name="clienteTelefono" type="text" required>
+
+    <label for="detalleServicio">Servicio seleccionado</label>
+    <textarea id="detalleServicio" name="detalleServicio" rows="2" readonly required></textarea>
+
+    <div id="servicioImagenContainer" style="margin-top:10px; text-align:center;"></div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn primary">Enviar solicitud por WhatsApp</button>
+    </div>
+
+    <p id="solicitudMsg" class="info"></p>
+  </form>
+</section>
+
+<script>
+  const userLogged = JSON.parse(localStorage.getItem("usuarioActivo")) || { nombre:"", correo:"" };
+  document.getElementById("clienteName").value = userLogged.nombre;
+  document.getElementById("clienteEmail").value = userLogged.correo;
+
+  const servicios = document.querySelectorAll(".service-category li");
+  const imgContainer = document.getElementById("servicioImagenContainer");
+  const formSection = document.getElementById("formSection");
+
+  servicios.forEach(li => {
+    li.addEventListener("click", () => {
+      const servicio = li.dataset.servicio;
+      const imgSrc = li.dataset.img;
+      document.getElementById("detalleServicio").value = servicio;
+      imgContainer.innerHTML = `<img src="${imgSrc}" alt="${servicio}" style="width:150px; border-radius:12px; margin-top:10px;">`;
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  const form = document.getElementById("solicitudForm");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    const name = document.getElementById("clienteName").value.trim();
+    const email = document.getElementById("clienteEmail").value.trim();
+    const telefono = document.getElementById("clienteTelefono").value.trim();
+    const detalle = document.getElementById("detalleServicio").value.trim();
+    const msgEl = document.getElementById("solicitudMsg");
+    msgEl.textContent = "";
+
+    if(!name || !email || !telefono || !detalle){
+      msgEl.textContent = 'Complete todos los campos obligatorios.';
+      return;
+    }
+
+    const telefonoDestino = '59179559806';
+    const texto = `Nueva solicitud de servicio:%0ANombre: ${name}%0ACorreo: ${email}%0ATeléfono: ${telefono}%0ADetalle: ${detalle}`;
+    const url = `https://wa.me/${telefonoDestino}?text=${texto}`;
+
+    window.open(url, '_blank');
+    msgEl.textContent = 'Abriendo WhatsApp...';
+    form.reset();
+    imgContainer.innerHTML = '';
+  });
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Audífonos - AudioMax</title>
+  <link rel="stylesheet" href="../css/colores.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modal.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand"><img src="../imagenes/logo.png"><h3>AudioMax</h3></div>
+    <nav>
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="categorias.html" class="active">Categorías</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="compras.html">Pedidos</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="contenido">
+    <header class="topbar"><h1>Audífonos</h1></header>
+
+    <section class="card">
+      <div class="producto-lista" data-id="audifono1">
+        <img src="../imagenes/productos/audifonos/sony-wh1000xm4.jpg">
+        <div>
+          <h3>Sony WH-1000XM4</h3>
+          <p class="precio">Bs 2,390</p>
+          <p class="desc">Cancelación de ruido premium y sonido de alta calidad.</p>
+        </div>
+      </div>
+
+      <div class="producto-lista" data-id="audifono2">
+        <img src="../imagenes/productos/audifonos/jbl-750btnc.jpg">
+        <div>
+          <h3>JBL Tune 750BTNC</h3>
+          <p class="precio">Bs 690</p>
+          <p class="desc">Graves potentes y cancelación activa de ruido.</p>
+        </div>
+      </div>
+
+      <div class="producto-lista" data-id="audifono3">
+        <img src="../imagenes/productos/audifonos/airpods-pro.jpg">
+        <div>
+          <h3>AirPods Pro 2</h3>
+          <p class="precio">Bs 1,850</p>
+          <p class="desc">Cancelación avanzada y modo ambiente mejorado.</p>
+        </div>
+      </div>
+
+      <div class="producto-lista" data-id="audifono4">
+        <img src="../imagenes/productos/audifonos/haylou-gt7.jpg">
+        <div>
+          <h3>Haylou GT7 Neo</h3>
+          <p class="precio">Bs 95</p>
+          <p class="desc">Ligeros, económicos y con buen rendimiento.</p>
+        </div>
+      </div>
+
+      <div class="producto-lista" data-id="audifono5">
+        <img src="../imagenes/productos/audifonos/logitech-g435.jpg">
+        <div>
+          <h3>Logitech G435</h3>
+          <p class="precio">Bs 420</p>
+          <p class="desc">Audífonos gamer inalámbricos ultra livianos.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Modal (igual que antes) -->
+<div id="modal-producto" class="modal">
+  <div class="modal-content">
+    <span class="cerrar">&times;</span>
+    <div class="modal-detalle">
+      <img id="modal-img" src="" alt="Producto">
+      <div class="modal-info">
+        <h2 id="modal-nombre"></h2>
+        <p class="precio" id="modal-precio"></p>
+        <p id="modal-descripcion"></p>
+        <ul id="modal-datasheet"></ul>
+        <button id="agregar-carrito">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/sidebar.js" defer></script>
+<script src="../js/categoria_modal.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+@import url('colores.css');
+
+form {
+    width: 430px;
+    background: var(--fondo-blanco);
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--gris-claro);
+    border-radius: 6px;
+    margin: 8px 0;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background: var(--neon-verde);
+    color: var(--texto-claro);
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form button:hover {
+    background: var(--neon-morado);
+}
+
+textarea {
+    resize: vertical;
+}
+/* GRID DE PRODUCTOS */
+.producto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 22px;
+}
+
+/* CARD */
+.producto {
+    background: var(--fondo-blanco);
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid var(--gris-claro);
+    text-align: center;
+    transition: 0.25s;
+    text-decoration: none;
+    color: var(--texto-oscuro);
+    box-shadow: 0 0 8px rgba(0,0,0,0.07);
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-azul);
+    box-shadow: 0 0 15px rgba(0,176,255,0.45);
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* PRODUCTO DETALLE */
+.producto-detalle {
+    display: flex;
+    gap: 35px;
+}
+
+.img-detalle {
+    width: 330px;
+    border-radius: 14px;
+    box-shadow: 0 0 12px rgba(0,176,255,0.3);
+}
+
+.info-detalle h2 {
+    color: var(--neon-morado);
+}
+
+.precio {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--neon-verde);
+    margin-bottom: 10px;
+}
+
+/* BOTÓN WHATSAPP */
+.btn-whatsapp {
+    display: inline-block;
+    padding: 12px 18px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 17px;
+    transition: 0.15s;
+}
+
+.btn-whatsapp:hover {
+    background: #1EBE58;
+    transform: scale(1.06);
+}

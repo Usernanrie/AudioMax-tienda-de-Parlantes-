@@ -1,0 +1,84 @@
+/* MODAL GENERAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: var(--fondo-blanco);
+  margin: auto;
+  padding: 20px;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  animation: slide-down 0.3s ease;
+}
+
+.modal-detalle {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.modal-detalle img {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,176,255,0.3);
+}
+
+.modal-info h2 {
+  color: var(--neon-morado);
+  margin-bottom: 10px;
+}
+
+.modal-info .precio {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--neon-verde);
+  margin-bottom: 10px;
+}
+
+.modal-info ul {
+  margin-bottom: 15px;
+}
+
+.modal-info button {
+  background-color: var(--color-principal);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-info button:hover {
+  background-color: var(--color-hover);
+}
+
+.cerrar {
+  color: #333;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cerrar:hover {
+  color: red;
+}
+
+@keyframes slide-down {
+  from {transform: translateY(-30px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}

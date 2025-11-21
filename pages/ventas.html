@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ventas - AudioMax</title>
+<link rel="stylesheet" href="../css/colores.css">
+<link rel="stylesheet" href="../css/sidebar.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/formularios.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Carrito */
+#carrito {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  max-height: 80%;
+  overflow-y: auto;
+  background: var(--fondo-blanco);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.25);
+  z-index: 2000;
+}
+#carrito h3 {
+  margin-top: 0;
+  color: var(--neon-morado);
+}
+.carrito-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.carrito-item span {
+  font-size: 14px;
+}
+.carrito-item button {
+  background: var(--color-principal);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+#total-carrito {
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: right;
+}
+#btn-whatsapp {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #25D366;
+}
+
+/* Fondo por categoría */
+.categoria-seccion {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.categoria-seccion h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* Grid productos */
+.producto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+.producto {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.producto img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+<aside class="sidebar">
+  <div class="brand">
+    <img src="../imagenes/logo.png" alt="AudioMax">
+    <h3>AudioMax</h3>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="categorias.html">Categorías</a></li>
+      <li><a href="ventas.html" class="active">Ventas</a></li>
+      <li><a href="compras.html">Pedidos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="perfil.html">Perfil</a></li>
+      <li><a href="configuracion.html">Configuración</a></li>
+      <li><a href="../index.html">Cerrar sesión</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main class="contenido">
+<header class="topbar"><h1>Ventas - Selecciona Productos</h1></header>
+
+<section class="card">
+  <p>Agrega los productos que deseas al carrito y luego realiza tu pedido vía WhatsApp.</p>
+
+  <div id="productos-container">
+    <!-- Productos cargados por JS -->
+  </div>
+</section>
+
+</main>
+
+<!-- Carrito flotante -->
+<div id="carrito">
+  <h3>Carrito</h3>
+  <div id="items-carrito"></div>
+  <div id="total-carrito">Total: Bs 0</div>
+  <button id="btn-whatsapp">Pedir por WhatsApp</button>
+</div>
+
+</div>
+
+<script src="../js/storage.js" defer></script>
+<script src="../js/sidebar.js" defer></script>
+<script defer>
+document.addEventListener("DOMContentLoaded", () => {
+    const productosContainer = document.getElementById("productos-container");
+    const itemsCarrito = document.getElementById("items-carrito");
+    const totalCarrito = document.getElementById("total-carrito");
+    const btnWhatsApp = document.getElementById("btn-whatsapp");
+    
+    let carrito = {};
+
+    // Función para agregar productos de una categoría
+    function agregarCategoria(titulo, listaIds) {
+        const catDiv = document.createElement("div");
+        catDiv.classList.add("categoria-seccion");
+        catDiv.innerHTML = `<h2>${titulo}</h2>`;
+        const grid = document.createElement("div");
+        grid.classList.add("producto-grid");
+
+        listaIds.forEach(key => {
+            const p = window.productos[key];
+            if (!p) return;
+
+            const div = document.createElement("div");
+            div.classList.add("producto");
+            div.innerHTML = `
+                <img src="${p.imagen}" alt="${p.nombre}">
+                <h3>${p.nombre}</h3>
+                <p class="precio">Bs ${p.precio}</p>
+                <p class="mini-desc">${p.descripcion}</p>
+                <input type="number" min="1" value="1" id="cant-${p.id}" style="width:60px;margin-bottom:5px;">
+                <button data-id="${p.id}">Agregar al carrito</button>
+            `;
+            grid.appendChild(div);
+        });
+
+        catDiv.appendChild(grid);
+        productosContainer.appendChild(catDiv);
+    }
+
+    // Cargar todas las categorías
+    agregarCategoria("Audífonos", ["audifono1","audifono2","audifono3","audifono4","audifono5"]);
+    agregarCategoria("Equipos de Sonido", ["equipo1","equipo2","equipo3","equipo4","equipo5"]);
+    agregarCategoria("Parlantes", ["parlante1","parlante2","parlante3","parlante4","parlante5"]);
+    agregarCategoria("Torres de Sonido", ["torre1","torre2","torre3","torre4","torre5"]);
+    agregarCategoria("Micrófonos", ["microfono1","microfono2","microfono3","microfono4","microfono5"]);
+    agregarCategoria("Accesorios", ["accesorio1","accesorio2","accesorio3","accesorio4","accesorio5"]);
+
+
+    // Función actualizar carrito en pantalla
+    function actualizarCarrito() {
+        itemsCarrito.innerHTML = "";
+        let total = 0;
+        for (let id in carrito) {
+            const item = carrito[id];
+            const div = document.createElement("div");
+            div.classList.add("carrito-item");
+            div.innerHTML = `<span>${item.nombre} x ${item.cantidad}</span>
+                             <button data-id="${id}">X</button>`;
+            itemsCarrito.appendChild(div);
+            total += item.precio * item.cantidad;
+        }
+        totalCarrito.textContent = `Total: Bs ${total}`;
+    }
+
+    // Agregar productos al carrito
+    productosContainer.addEventListener("click", e => {
+        if (e.target.tagName === "BUTTON") {
+            const id = e.target.dataset.id;
+            const cantidad = parseInt(document.getElementById(`cant-${id}`).value);
+            if (carrito[id]) {
+                carrito[id].cantidad += cantidad;
+            } else {
+                carrito[id] = {...window.productos[id], cantidad};
+            }
+            actualizarCarrito();
+        }
+    });
+
+    // Eliminar producto del carrito
+    itemsCarrito.addEventListener("click", e => {
+        if (e.target.tagName === "BUTTON") {
+            const id = e.target.dataset.id;
+            delete carrito[id];
+            actualizarCarrito();
+        }
+    });
+
+    // Generar link de WhatsApp
+    btnWhatsApp.addEventListener("click", () => {
+        if (Object.keys(carrito).length === 0) {
+            alert("El carrito está vacío.");
+            return;
+        }
+        let mensaje = "Hola, quiero pedir los siguientes productos:%0A";
+        for (let id in carrito) {
+            const item = carrito[id];
+            mensaje += `- ${item.nombre} x ${item.cantidad} (Bs ${item.precio} c/u)%0A`;
+        }
+        const url = `https://wa.me/59174911918?text=${mensaje}`;
+        window.open(url, "_blank");
+    });
+
+});
+</script>
+</body>
+</html>

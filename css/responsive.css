@@ -1,0 +1,14 @@
+@media (max-width: 768px){
+  .sidebar {
+    left: -250px;
+    transition: left 0.3s;
+  }
+
+  .sidebar.sidebar-cerrado {
+    left: 0;
+  }
+
+  .contenido {
+    margin-left: 20px; /* contenido ocupa casi toda la pantalla */
+  }
+}

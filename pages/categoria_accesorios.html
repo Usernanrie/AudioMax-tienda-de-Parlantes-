@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Accesorios - AudioMax</title>
+  <link rel="stylesheet" href="../css/colores.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modal.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand"><img src="../imagenes/logo.png"><h3>AudioMax</h3></div>
+    <nav>
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="categorias.html" class="active">Categorías</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="compras.html">Pedidos</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="contenido">
+    <header class="topbar"><h1>Accesorios</h1></header>
+
+    <section class="card">
+      <div class="producto-lista" data-id="accesorio1">
+        <img src="../imagenes/productos/accesorios/powerbank.jpg">
+        <div>
+          <h3>Power Bank 10000mAh</h3>
+          <p class="precio">Bs 85</p>
+          <p class="desc">Banco de carga portátil de alto rendimiento.</p>
+        </div>
+      </div>
+
+      <div class="producto-lista" data-id="accesorio2">
+        <img src="../imagenes/productos/accesorios/cable-aux.jpg">
+        <div>
+          <h3>Cable AUX 1.5m</h3>
+          <p class="precio">Bs 12</p>
+          <p class="desc">Cable auxiliar reforzado, compatible con todo dispositivo.</p>
+        </div>
+      </div>
+
+      <div class="producto-lista" data-id="accesorio3">
+        <img src="../imagenes/productos/accesorios/cable-usb-c.jpg">
+        <div>
+          <h3>Cable USB-C Carga Rápida</h3>
+          <p class="precio">Bs 18</p>
+          <p class="desc">Cable de alta resistencia para carga rápida.</p>
+        </div>
+      </div>
+
+      <div class="producto-lista" data-id="accesorio4">
+        <img src="../imagenes/productos/accesorios/soporte-micro.jpg">
+        <div>
+          <h3>Soporte para micrófono</h3>
+          <p class="precio">Bs 55</p>
+          <p class="desc">Brazo articulado liviano con ajuste universal.</p>
+        </div>
+      </div>
+
+      <div class="producto-lista" data-id="accesorio5">
+        <img src="../imagenes/productos/accesorios/rgb-led.jpg">
+        <div>
+          <h3>Tira LED RGB 5m</h3>
+          <p class="precio">Bs 35</p>
+          <p class="desc">Iluminación decorativa con control remoto.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Modal -->
+<div id="modal-producto" class="modal">
+  <div class="modal-content">
+    <span class="cerrar">&times;</span>
+    <div class="modal-detalle">
+      <img id="modal-img" src="" alt="Producto">
+      <div class="modal-info">
+        <h2 id="modal-nombre"></h2>
+        <p class="precio" id="modal-precio"></p>
+        <p id="modal-descripcion"></p>
+        <ul id="modal-datasheet"></ul>
+        <button id="agregar-carrito">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/sidebar.js" defer></script>
+<script src="../js/categoria_modal.js" defer></script>
+</body>
+</html>

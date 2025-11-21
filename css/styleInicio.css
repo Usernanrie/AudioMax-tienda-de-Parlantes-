@@ -1,0 +1,29 @@
+.hero {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(135deg, var(--neon-azul), var(--neon-morado));
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.producto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 15px;
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.mini-desc {
+  font-size: 0.9rem;
+  color: #1a1a1a;
+}
+
+.precio {
+  font-weight: bold;
+  color: var(--color-principal);
+}

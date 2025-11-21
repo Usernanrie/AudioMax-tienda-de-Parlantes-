@@ -1,0 +1,11 @@
+:root {
+  --fondo: #e6f0f8;            /* Fondo general, gris-azulado claro */
+  --fondo-blanco: #d9e6f2;     /* Tarjetas y secciones (ya no blanco puro) */
+  --color-principal: #1e90ff;  /* Azul eléctrico */
+  --color-secundario: #9b30ff; /* Morado neón */
+  --color-texto: #1a1a1a;      /* Texto oscuro para contraste */
+  --color-hover: #00bfff;      /* Hover para botones y enlaces */
+  --fondo-lateral: #c4d9f0;    /* Sidebar, azul grisáceo claro */
+  --neon-azul: #00f0ff;        /* Para títulos y destacados */
+  --neon-morado: #c700ff;      /* Para títulos y acentos */
+}

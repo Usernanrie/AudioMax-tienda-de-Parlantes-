@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contacto - AudioMax</title>
+<link rel="stylesheet" href="../css/colores.css">
+<link rel="stylesheet" href="../css/sidebar.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/formularios.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="app">
+
+<aside class="sidebar">
+  <div class="brand">
+    <img src="../imagenes/logo.png" alt="AudioMax">
+    <h3>AudioMax</h3>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="categorias.html">Categorías</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="ventas.html">Ventas</a></li>
+      <li><a href="compras.html">Pedidos</a></li>
+      <li><a href="contacto.html" class="active">Contacto</a></li>
+      <li><a href="perfil.html">Perfil</a></li>
+      <li><a href="configuracion.html">Configuración</a></li>
+      <li><a href="../index.html">Cerrar sesión</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main class="contenido">
+<header class="topbar"><h1>Contacto</h1></header>
+
+<section class="card">
+  <form id="formContacto">
+    <label>Nombre completo</label>
+    <input type="text" id="nombre" required>
+    <label>Correo electrónico</label>
+    <input type="email" id="correo" required>
+    <label>Mensaje</label>
+    <textarea id="mensaje" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+  <p id="msgContacto"></p>
+</section>
+
+</main>
+</div>
+
+<script src="../js/sidebar.js" defer></script>
+<script>
+document.getElementById('formContacto').addEventListener('submit', function(e){
+  e.preventDefault();
+  const nombre = document.getElementById('nombre').value;
+  const correo = document.getElementById('correo').value;
+  const mensaje = document.getElementById('mensaje').value;
+  if(!nombre||!correo||!mensaje){document.getElementById('msgContacto').textContent="Complete todos los campos";return;}
+  document.getElementById('msgContacto').textContent="Mensaje enviado con éxito, gracias por contactarnos.";
+  this.reset();
+});
+</script>
+</body>
+</html>
